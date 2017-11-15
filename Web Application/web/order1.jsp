@@ -12,7 +12,25 @@
         <title>JSP Page</title>
     </head>
     <body>
-        Cek token expired dulu <br>
-        <h1>Hello World!</h1>
+        <%@include file="validateToken.jsp" %>
+        hi,
+        <b><%
+            out.print(session.getAttribute("username"));  
+        %></b>
+        <br>
+        <a href="logout.jsp">Logout</a>
+        <br>
+        <br>
+        
+        <a href="order1.jsp">ORDER</a>        
+        <br>
+        <a href="history_user.jsp">HISTORY</a>
+        <br>
+        <a href="profile.jsp">MY PROFILE</a>
+        <br>
+        
+        <br>
+        <h3>ORDER</h3>
+        Query ke identitydb
     </body>
 </html>

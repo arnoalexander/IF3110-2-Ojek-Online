@@ -9,8 +9,8 @@
         <h1>Sudah logout</h1>
         Clear session
         <%
-          session.invalidate();
-          response.sendRedirect("login.html");
+            session.invalidate();
+            response.sendRedirect("login.html");
         %>
     </body>
 </html>

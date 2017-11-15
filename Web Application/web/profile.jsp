@@ -12,7 +12,7 @@
         <title>Profile</title>
     </head>
     <body>
-        Cek token expired dulu <br>
+        <%@include file="validateToken.jsp" %>
         hi,
         <b><%
             out.print(session.getAttribute("username"));  
