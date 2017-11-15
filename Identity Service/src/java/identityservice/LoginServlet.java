@@ -20,6 +20,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.jsp.PageContext;
 import org.json.JSONException;
 
 import org.json.JSONObject;
@@ -85,6 +86,7 @@ public class LoginServlet extends HttpServlet {
         int isDriver = resultSet.getInt("isDriver");
         
         /*JSON WRITING*/
+        json.put("username", username);
         json.put("token", token);
         json.put("isDriver", isDriver);
         
