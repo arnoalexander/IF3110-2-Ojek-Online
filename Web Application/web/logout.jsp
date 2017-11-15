@@ -1,9 +1,3 @@
-<%-- 
-    Document   : order3
-    Created on : 16-Nov-2017, 00:46:14
-    Author     : Asus
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -12,7 +6,11 @@
         <title>JSP Page</title>
     </head>
     <body>
-        Cek token expired dulu <br>
-        <h1>Hello World!</h1>
+        <h1>Sudah logout</h1>
+        Clear session
+        <%
+          session.invalidate();
+          response.sendRedirect("login.html");
+        %>
     </body>
 </html>

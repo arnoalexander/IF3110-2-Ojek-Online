@@ -112,8 +112,8 @@ public class RegisterServlet extends HttpServlet {
                 con.setAutoCommit(true);
                 
                 js.put("username", username);
-                js.put("token", token);
                 js.put("isDriver", isDriver);
+                js.put("token", token);
             }
         } catch (Exception ex) {
             js.put("status",ex.getMessage());

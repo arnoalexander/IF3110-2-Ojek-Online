@@ -83,18 +83,18 @@ public class LoginServlet extends HttpServlet {
       ResultSet resultSet = SQLStatement.executeQuery();
       if (resultSet.next()) {
         String token = resultSet.getString("token");
-        int isDriver = resultSet.getInt("isDriver");
-        
-        /*JSON WRITING*/
-        json.put("username", username);
-        json.put("token", token);
-        json.put("isDriver", isDriver);
+        int isDriverInt = resultSet.getInt("isDriver");
+        boolean isDriver = isDriverInt != 0;
         
         query = "UPDATE members SET expired_t = ? WHERE username = ?;";
         SQLStatement = connection.prepareStatement(query);
         SQLStatement.setLong(1, expire.getTime() + 60000);
         SQLStatement.setString(2, username);
         SQLStatement.executeUpdate();
+        
+        json.put("username", username);
+        json.put("isDriver", isDriver);
+        json.put("token", token);
       } else {
         response.sendRedirect("login.html?error=true");
       }

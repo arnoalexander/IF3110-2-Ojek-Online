@@ -6,9 +6,23 @@
 <%@page import="java.net.HttpURLConnection"%>
 <%@page import="java.net.URL"%>
 <%
-	final String POST_URL = "http://localhost:8080/Identity_Service/LoginServlet";
-	final String POST_PARAMS = "username="+ request.getParameter("username") +"&" + "password=" + request.getParameter("password");
-        URL obj = new URL(POST_URL);
+	final String POST_URL = "http://localhost:8080/Identity_Service/RegisterServlet";
+	String POST_PARAMS;
+        if (request.getParameter("isDriver") == null) {
+            POST_PARAMS = "name="+ request.getParameter("name") +"&" + 
+                            "username="+ request.getParameter("username") +"&" +
+                            "email="+ request.getParameter("email") +"&" +
+                            "password="+ request.getParameter("password") +"&" +
+                            "phone="+ request.getParameter("phone");
+        } else {
+            POST_PARAMS = "name="+ request.getParameter("name") +"&" + 
+                            "username="+ request.getParameter("username") +"&" +
+                            "email="+ request.getParameter("email") +"&" +
+                            "password="+ request.getParameter("password") +"&" +
+                            "phone="+ request.getParameter("phone") +"&" +
+                            "isDriver="+ request.getParameter("isDriver");
+        }
+	URL obj = new URL(POST_URL);
 	HttpURLConnection con = (HttpURLConnection) obj.openConnection();
 	con.setRequestMethod("POST");
 	
@@ -41,10 +55,10 @@
 				response.sendRedirect("order1.jsp");
 			}
 		} else {
-			response.sendRedirect("login.html?error=true");
+			response.sendRedirect("register.html?error=true");
 		}
 	} else {
-          response.sendRedirect("login.html?error=true");
-        }
+          response.sendRedirect("register.html?error=true");
+	}
 	
 %>
