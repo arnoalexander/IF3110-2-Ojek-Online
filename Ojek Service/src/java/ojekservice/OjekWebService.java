@@ -36,4 +36,14 @@ public class OjekWebService {
   public String fetchOtherDriver(@WebParam(name = "preferredUsername") String preferredUsername) {
     return OrderWebService.fetchOtherDriver(preferredUsername);
   }
+  
+  @WebMethod(operationName = "fetchDriverHistory")
+  public String fetchDriverHistory(@WebParam(name = "username") String username) {
+    return HistoryWebService.fetchDriverHistory(username);
+  }
+  
+  @WebMethod(operationName = "fetchUserHistory")
+  public String fetchUserHistory(@WebParam(name = "username") String username) {
+    return HistoryWebService.fetchUserHistory(username);
+  }
 }
