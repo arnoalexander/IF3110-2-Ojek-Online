@@ -36,10 +36,7 @@
             <input type="hidden" name="destination" value="<% out.println(request.getParameter("destination")); %>"/>
             <input type="hidden" name="pref" value="<% out.println(request.getParameter("pref")); %>"/>
             <h3>Preferred Drivers</h3>
-            <%
-              //JSONArray json = OjekWebClient.fetchPreferredDriver(request.getParameter("pref"));
-              ojekclient.OjekWebService service = ojekclient.OjekWebService_Service.;
-            %>
+            Nothing to display<br>
             <h3>Other Drivers</h3>
             Nothing to display<br>
         </form>

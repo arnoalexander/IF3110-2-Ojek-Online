@@ -13,6 +13,23 @@
     </head>
     <body>
         <%@include file="validateToken.jsp" %>
-        <h1>Hello World!</h1>
+        hi,
+        <b><%
+            out.print(session.getAttribute("username"));  
+        %></b>
+        <br>
+        <a href="logout.jsp">Logout</a>
+        <br>
+        <br>
+        
+        <a href="order1.jsp">ORDER</a>        
+        <br>
+        <a href="history_user.jsp">HISTORY</a>
+        <br>
+        <a href="profile.jsp">MY PROFILE</a>
+        <br>
+        
+        <br>
+        <h3>Complete Your Order</h3>
     </body>
 </html>

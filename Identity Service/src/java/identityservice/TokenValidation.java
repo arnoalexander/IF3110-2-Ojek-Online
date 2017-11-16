@@ -103,10 +103,11 @@ public class TokenValidation extends HttpServlet {
           SQLStatement.executeUpdate();
           json.put("isValid", 1);
         } else {
-          //zerofyExpiredT(token);
+          json.put("isExpired", 1);
           response.sendRedirect("/Web_Application/logout.jsp");
         }
       } else {
+        json.put("notFound", 1);
         response.sendRedirect("/Web_Application/logout.jsp");
       }
     } catch (Exception ex) {
