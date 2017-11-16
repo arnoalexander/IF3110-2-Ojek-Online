@@ -27,5 +27,13 @@ public class OjekWebService {
     return "Hello " + txt + " !";
   }
   
+  @WebMethod(operationName = "fetchPreferredDriver")
+  public String fetchPreferredDriver(@WebParam(name = "preferredUsername") String preferredUsername) {
+    return OrderWebService.fetchPreferredDriver(preferredUsername);
+  }
   
+  @WebMethod(operationName = "fetchOtherDriver")
+  public String fetchOtherDriver(@WebParam(name = "preferredUsername") String preferredUsername) {
+    return OrderWebService.fetchOtherDriver(preferredUsername);
+  }
 }

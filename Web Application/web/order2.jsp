@@ -4,6 +4,7 @@
     Author     : Asus
 --%>
 
+<%@page import="org.json.JSONArray"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -35,11 +36,44 @@
             <input type="hidden" name="destination" value="<% out.println(request.getParameter("destination")); %>"/>
             <input type="hidden" name="pref" value="<% out.println(request.getParameter("pref")); %>"/>
             <h3>Preferred Drivers</h3>
-            Nothing to display<br>
+            <%
+              //JSONArray json = OjekWebClient.fetchPreferredDriver(request.getParameter("pref"));
+              ojekclient.OjekWebService service = ojekclient.OjekWebService_Service.;
+            %>
             <h3>Other Drivers</h3>
             Nothing to display<br>
         </form>
         
         
+    <%-- start web service invocation --%><hr/>
+    <%
+    try {
+	ojekclient.OjekWebService_Service service = new ojekclient.OjekWebService_Service();
+	ojekclient.OjekWebService port = service.getOjekWebServicePort();
+	 // TODO initialize WS operation arguments here
+	java.lang.String preferredUsername = "";
+	// TODO process result here
+	java.lang.String result = port.fetchPreferredDriver(preferredUsername);
+	out.println("Result = "+result);
+    } catch (Exception ex) {
+	// TODO handle custom exceptions here
+    }
+    %>
+    <%-- end web service invocation --%><hr/>
+    <%-- start web service invocation --%><hr/>
+    <%
+    try {
+	ojekclient.OjekWebService_Service service = new ojekclient.OjekWebService_Service();
+	ojekclient.OjekWebService port = service.getOjekWebServicePort();
+	 // TODO initialize WS operation arguments here
+	java.lang.String preferredUsername = "";
+	// TODO process result here
+	java.lang.String result = port.fetchPreferredDriver(preferredUsername);
+	out.println("Result = "+result);
+    } catch (Exception ex) {
+	// TODO handle custom exceptions here
+    }
+    %>
+    <%-- end web service invocation --%><hr/>
     </body>
 </html>
