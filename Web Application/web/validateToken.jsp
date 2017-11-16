@@ -44,5 +44,5 @@
 	} else {
             response.sendRedirect("logout.jsp");
         }
-        out.println("yay valid <br>");
+        //out.println("yay valid <br>");
 %>

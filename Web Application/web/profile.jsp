@@ -18,7 +18,7 @@
             out.print(session.getAttribute("username"));  
         %></b>
         <br>
-        <a href="logout.jsp">Logout</a>
+        <a href="logout.jsp?">Logout</a>
         <br>
         <br>
         
