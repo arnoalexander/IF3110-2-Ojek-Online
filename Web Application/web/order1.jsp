@@ -9,7 +9,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Order</title>
     </head>
     <body>
         <%@include file="validateToken.jsp" %>
@@ -31,6 +31,12 @@
         
         <br>
         <h3>ORDER</h3>
-        Query ke identitydb
+        <form method="post" action="order2.jsp">
+        Picking point:<input type="text" name="pick" /><br/>
+        Destination:<input type="text" name="destination" /><br/>
+        Preferred driver:<input type="text" name="pref" /><br/>
+        <input type="submit" value="next" />
+        </form>
+        <a href="register.html">Register</a>
     </body>
 </html>

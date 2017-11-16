@@ -12,7 +12,7 @@
         <title>JSP Page</title>
     </head>
     <body>
-        Cek token expired dulu <br>
+        <%@include file="validateToken.jsp" %>
         <h1>Hello World!</h1>
     </body>
 </html>

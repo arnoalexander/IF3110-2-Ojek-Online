@@ -8,12 +8,15 @@ package ojekservice;
 import javax.jws.WebService;
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
+import javax.jws.soap.SOAPBinding;
+import javax.jws.soap.SOAPBinding.Style;
 
 /**
  *
  * @author Asus
  */
 @WebService(serviceName = "OjekWebService")
+@SOAPBinding(style = Style.RPC)
 public class OjekWebService {
 
   /**
@@ -23,4 +26,6 @@ public class OjekWebService {
   public String hello(@WebParam(name = "name") String txt) {
     return "Hello " + txt + " !";
   }
+  
+  
 }
