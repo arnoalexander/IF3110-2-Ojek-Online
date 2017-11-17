@@ -24,6 +24,10 @@
         <servlet-name>DriverServlet</servlet-name>
         <servlet-class>identityservice.DriverServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>UpdateProfile</servlet-name>
+        <servlet-class>identityservice.UpdateProfile</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>LoginServlet</servlet-name>
         <url-pattern>/LoginServlet</url-pattern>
@@ -47,6 +51,10 @@
     <servlet-mapping>
         <servlet-name>DriverServlet</servlet-name>
         <url-pattern>/DriverServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>UpdateProfile</servlet-name>
+        <url-pattern>/UpdateProfile</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>30</session-timeout>

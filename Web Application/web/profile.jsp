@@ -31,12 +31,41 @@
         
         <br>
         <h3>MY PROFILE</h3>
-        Query ke identitydb
-        
+        <br>
+        <%
+        final String URL_STR = "http://localhost:8080/Identity_Service/UserServlet";
+	final String PARAMS = "token=" + session.getAttribute("token");
+        URL url = new URL(URL_STR);
+	HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+	connection.setRequestMethod("POST");
+	
+	connection.setDoOutput(true);
+	OutputStream output = connection.getOutputStream();
+	output.write(POST_PARAMS.getBytes());
+	output.flush();
+	output.close();
+	
+	responseCode = connection.getResponseCode();
+	if (responseCode == HttpURLConnection.HTTP_OK) { //success
+		BufferedReader in = new BufferedReader(new InputStreamReader(
+				connection.getInputStream()));
+		String inputLine;
+		StringBuffer resp = new StringBuffer();
+	
+		while ((inputLine = in.readLine()) != null) {
+			resp.append(inputLine);
+		}
+		in.close();
+		
+		JSONObject json = new JSONObject(resp.toString());
+		out.print(json.toString());
+	} else {
+          out.print("{}");
+        }
+        %>
         <br>
         <br>
-        
-        <br>
+        <a href="editprofile.jsp">Edit Profile</a><br>
         <%
             if ((Boolean) session.getAttribute("isDriver")) {
               out.print("Preffered Location<br>");
