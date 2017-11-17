@@ -37,6 +37,5 @@
         Preferred driver:<input type="text" name="pref" /><br/>
         <input type="submit" value="next" />
         </form>
-        <a href="register.html">Register</a>
     </body>
 </html>
